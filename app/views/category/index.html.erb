@@ -1,0 +1,105 @@
+<div class="w3-main" style="margin:auto;max-width:1260px">
+	<div  class="w3-container w3-padding-jumpo">
+		<%= render partial: "shared/sidebar" %>
+		
+		<div class=" w3-col l9 m9 s12">
+			<div style="margin-bottom:30px" class="w3-container  w3-hide-small ">
+				<% @posts.where('category_id = 1').limit(3).each do |post| %>	
+					<%= link_to [post.category, post], class: "mySlides" do %>
+							<div  class="w3-card-1 w3-display-container w3-hover-shadow ">
+								<%= image_tag post.image, style: "width:100%" %>
+								
+								
+							</div>
+							
+					<% end %>	
+				<% end %>
+			</div>
+			
+			<div style="margin-bottom:30px" class="w3-container w3-white w3-margin w3-padding">
+				<button style="background:rgb(41, 105, 176);float:right" class="w3-btn"><%= link_to tatca_path do %>Xem Tất Cả <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i><% end %></button>
+				<h1>Sản Phẩm</h1>
+				<% @posts.where('category_id = 2').limit(6).each do |post| %>	
+						<%= link_to [post.category, post] do %>
+							<div class="w3-padding  w3-col l4 m6">
+								<div  class="w3-card-1 w3-hover-shadow ">
+									<%= image_tag post.image, style: "width:100%" %>
+									<div style="min-height:160px" class="w3-white w3-container">
+										<p><strong><span style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><%= post.title %></span></span></strong></p>
+					
+										<p><strong><span style="color: rgb(184, 49, 47);">Giá: <%=  post.gia %></span></strong></p>
+									</div>
+								</div>
+							</div>	
+						<% end %>	
+				<% end %>
+			</div>
+			
+			<div class="w3-white w3-margin w3-padding  w3-container">
+				<button style="background:rgb(41, 105, 176);float:right" class="w3-btn">Xem Tất Cả <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				<h1>Khách Hàng Đánh Giá</h1>
+				
+				<div class="w3-row w3-margin">
+					<div class="w3-round w3-third">
+	  					<img class="w3-round " src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIizroaSVebmjA1NoRto8JomJkpAmpLxWXEgZ7uiv7LHm7P1OMCQ" style="width:100%;">
+					</div>
+					<div class="w3-twothird w3-container">
+					  <h2>Anh Nguyễn Trần ...</h2>
+					  <p>
+					  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					  </p>
+					</div>
+				</div><hr>
+				<div class="w3-row w3-margin">
+					<div class="w3-third">
+	  					<img class="w3-round " src="http://evelynsandoval.pw/wp-content/uploads/2015/07/Collect-Customer-Feedback-for-Marketing.jpg" style="width:100%;">
+					</div>
+					<div class="w3-twothird w3-container">
+					  <h2>Chị Lê Thị Something</h2>
+					  <p>
+					  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					  </p>
+					</div>
+				</div>	
+					
+			</div>
+			
+			<div class="w3-white w3-margin w3-padding  w3-container">
+				<button style="background:rgb(41, 105, 176);float:right" class="w3-btn"><%= link_to tintuc_path do %>Xem Tất Cả <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i><% end %></button>
+				<h1>Tin Tức</h1>
+				<% @tintucs.limit(3).each do |tintuc| %>
+    					<%= link_to [tintuc.category, tintuc] do %>
+    					<div class="w3-row w3-margin">
+        					<div class="w3-third">
+        	  					<%= image_tag tintuc.image, style: "width:100%" %>
+        					</div>
+        					<div class="w3-twothird w3-container">
+        					  <h2><%= tintuc.title %></h2>
+        					  <p><strong><span style="color: rgb(184, 49, 47);"><%= tintuc.created_at.strftime("%b %d, %Y") %></span></strong></p>
+        					  <p><%= tintuc.tomtat %></p>
+        					</div>
+        				</div><hr>	
+        			    <% end %>
+					<% end %>	
+					
+			</div>
+		</div>	
+	</div>
+</div>	
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000);    
+}
+</script>

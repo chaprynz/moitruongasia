@@ -1,0 +1,66 @@
+<div class="w3-main" style="margin:auto;max-width:1260px">
+    <div  class="w3-container w3-padding-jumpo">
+        <%= render partial: "shared/sidebar" %>
+        <div class=" w3-col l9 m9 s12">
+            <div style="margin-bottom:30px" class="w3-white w3-margin-left w3-container  w3-padding">
+                <div class="w3-container">
+                    <div class="w3-padding w3-col s12 m6 l4">
+                        <%= image_tag @post.image, style: "width:100%" %>
+                        <p><span><span style="color: rgb(44, 130, 201);"><strong>Giá: <%=  @post.gia %></strong></span></span></p>
+                        <p><span><span style="color: rgb(44, 130, 201);"><strong>Liên Hệ: 098.764.4688</strong></span></span></p>
+                    </div>
+                    <div class="w3-col s12 m6 l8">
+                        
+                        <p><strong><span style="color: rgb(184, 49, 47);"><span style="font-size: 18px;"><%=  @post.title %></span></span></strong></p><hr>
+                        <p style="color:orange"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+                        <%=  raw @post.tongquan %><hr>
+                        <p><strong><span style="color: rgb(184, 49, 47);"><span style="font-size: 18px;"><i class="fa fa-tag" aria-hidden="true"></i> Tiêu Chuẩn</span></span></strong></p>
+                        <p><span><span style="color: rgb(44, 130, 201);"><strong><%=  @post.tieuchuan %></strong></span></span></p><hr>
+                        
+                    </div>
+                </div> 
+            </div>
+            
+            <div style="margin-bottom:30px" class="w3-white w3-margin-left w3-container  w3-padding">
+                <div class="w3-container">
+                    <p><strong><span style="color: rgb(184, 49, 47);"><span style="font-size: 18px;">Thông Tin Sản Phẩm</span></span></strong></p><hr>
+                    <%=  raw @post.thongtinsanpham %>
+                </div> 
+            </div>
+            
+            <div style="margin-bottom:30px" class="w3-white w3-margin-left w3-container  w3-padding">
+                <div class="w3-container">
+                    <p><strong><span style="color: rgb(184, 49, 47);"><span style="font-size: 18px;">Thông Số Kỹ Thuật</span></span></strong></p><hr>
+                    
+                    <div , class="w3-table w3-striped"><%=  raw @post.thongsokythuat %></div>
+                    
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>    
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000);    
+}
+</script>
+
+<script>
+for (var i = 0; i < document.links.length; i++) {
+    if (document.links[i].href == document.URL) {
+        document.links[i].className = 'active';
+    }
+}
+</script>

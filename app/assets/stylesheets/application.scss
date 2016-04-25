@@ -1,0 +1,18 @@
+@import 'w3.scss';
+@import 'font-awesome';
+
+a {
+    text-decoration:none;
+}
+
+.active {
+  
+  color: black;
+}
+
+
+nav a.active {
+   background: black;
+  color: green;
+  
+}

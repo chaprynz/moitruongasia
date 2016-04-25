@@ -1,0 +1,37 @@
+<div class="w3-main" style="margin:auto;max-width:1260px">
+	<div  class="w3-container w3-padding-jumpo">
+		<%= render partial: "shared/sidebar" %>
+		
+		<div class=" w3-col l9 m9 s12">
+			<div style="margin-bottom:30px" class="w3-container w3-white w3-margin-left w3-padding">
+				<h1><%= @category.name %></h1>
+				<% @posts.each do |post| %>	
+						<% if !post.slide? %>
+    						<%= link_to [post.category, post] do %>
+    							<div class="w3-padding  w3-col l4 m6">
+    								<div  class="w3-card-1 w3-hover-shadow ">
+    									<%= image_tag post.image, style: "width:100%" %>
+    									<div style="min-height:160px" class="w3-white w3-container">
+    										<p><strong><span style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><%= post.title %></span></span></strong></p>
+    					
+    										<p><strong><span style="color: rgb(184, 49, 47);">Giá: <%=  post.gia %></span></strong></p>
+    									</div>
+    								</div>
+    							</div>	
+    						<% end %>
+						<% end %>
+				<% end %>
+			</div>
+			
+			
+		</div>	
+	</div>
+</div>
+
+<script>
+for (var i = 0; i < document.links.length; i++) {
+    if (document.links[i].href == document.URL) {
+        document.links[i].className = 'active';
+    }
+}
+</script>
