@@ -4,6 +4,5 @@ class TintucController < ApplicationController
   	@tintuc = Tintuc.find(params[:id])
   	@tintucs = category.tintucs
   	@categories = Category.all
-    
   end
 end

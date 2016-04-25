@@ -36,31 +36,23 @@
 			</div>
 			
 			<div class="w3-white w3-margin w3-padding  w3-container">
-				<button style="background:rgb(41, 105, 176);float:right" class="w3-btn">Xem Tất Cả <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				<button style="background:rgb(41, 105, 176);float:right" class="w3-btn"><%= link_to khachhang_index_path do %>Xem Tất Cả <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i><% end %></button>
 				<h1>Khách Hàng Đánh Giá</h1>
 				
-				<div class="w3-row w3-margin">
-					<div class="w3-round w3-third">
-	  					<img class="w3-round " src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIizroaSVebmjA1NoRto8JomJkpAmpLxWXEgZ7uiv7LHm7P1OMCQ" style="width:100%;">
-					</div>
-					<div class="w3-twothird w3-container">
-					  <h2>Anh Nguyễn Trần ...</h2>
-					  <p>
-					  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					  </p>
-					</div>
-				</div><hr>
-				<div class="w3-row w3-margin">
-					<div class="w3-third">
-	  					<img class="w3-round " src="http://evelynsandoval.pw/wp-content/uploads/2015/07/Collect-Customer-Feedback-for-Marketing.jpg" style="width:100%;">
-					</div>
-					<div class="w3-twothird w3-container">
-					  <h2>Chị Lê Thị Something</h2>
-					  <p>
-					  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					  </p>
-					</div>
-				</div>	
+				<% @khachhangs.limit(3).each do |khachhang| %>
+    					<%= link_to khachhang do %>
+    					<div class="w3-row w3-margin">
+        					<div class="w3-third">
+        	  					<%= image_tag khachhang.image, style: "width:100%" %>
+        					</div>
+        					<div class="w3-twothird w3-container">
+        					  <h2><%= khachhang.name %></h2>
+        					  <p><strong><span style="color: rgb(184, 49, 47);"><%= khachhang.address %></span></strong></p>
+        					  <p><%= khachhang.content %></p>
+        					</div>
+        				</div><hr>	
+        			    <% end %>
+					<% end %>	
 					
 			</div>
 			

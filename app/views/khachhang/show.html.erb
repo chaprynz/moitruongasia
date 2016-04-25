@@ -4,18 +4,20 @@
         <%= render partial: "shared/sidebar" %>
         <div class=" w3-col l9 m9 s12">
             <div  style="margin-bottom:30px" class="w3-white w3-margin-left w3-container  w3-padding">
-                <h1><span style="font-family: Impact,Charcoal,sans-serif;"><span style="font-size: 48px;"><span style="color: rgb(40, 50, 78);"><%=  @tintuc.title %></span></span>
+                <h1><span style="font-family: Impact,Charcoal,sans-serif;"><span style="font-size: 48px;"><span style="color: rgb(40, 50, 78);"><%=  @khachhang.name %></span></span>
 	            </span>
                 </h1>
-                <p><strong><span style="color: rgb(184, 49, 47);"><%= @tintuc.created_at.strftime("%b %d, %Y") %></span></strong></p>    
+                <p><strong><span style="color: rgb(184, 49, 47);"><%= @khachhang.address %></span></strong></p>  
+                <%= image_tag @khachhang.image, style: "width:100%" %>
                 <style>
                     a {color:red;}
                 </style>
-                <%=  raw @tintuc.content %>
+                <%=  raw @khachhang.content %>
             </div>
         </div>    
     </div>
 </div>    
+
 
 
 <script>
