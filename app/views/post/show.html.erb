@@ -22,7 +22,7 @@
             </div>
             
             <div style="margin-bottom:30px" class="w3-white w3-margin-left w3-container  w3-padding">
-                <div class="w3-container">
+                <div class="alink w3-container">
                     <p><strong><span style="color: rgb(184, 49, 47);"><span style="font-size: 18px;">Thông Tin Sản Phẩm</span></span></strong></p><hr>
                     <%=  raw @post.thongtinsanpham %>
                 </div> 
@@ -38,25 +38,7 @@
             </div>
         </div>
     </div>
-</div>    
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000);    
-}
-</script>
-
+</div>
 <script>
 for (var i = 0; i < document.links.length; i++) {
     if (document.links[i].href == document.URL) {
@@ -64,3 +46,7 @@ for (var i = 0; i < document.links.length; i++) {
     }
 }
 </script>
+
+
+
+
