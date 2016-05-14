@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   get '/khachhang' => 'khachhang#index'
   get '/lienhe' => 'pages#lienhe'
   get '/video' => 'pages#video'
-  get '/google6f3917df6654af9f' => 'pages#google6f3917df6654af9f'
+ 
 
 end
