@@ -1,6 +1,6 @@
 ActiveAdmin.register Post do
 
-permit_params :title, :category_id, :image, :slide, :tongquan, :tieuchuan, :thongsokythuat, :thongtinsanpham, :gia
+permit_params :title, :category_id, :image, :slide, :tongquan, :tieuchuan, :thongsokythuat, :thongtinsanpham, :gia, :slug
 
 	index do 
 		column :title
@@ -12,6 +12,7 @@ permit_params :title, :category_id, :image, :slide, :tongquan, :tieuchuan, :thon
 		f.inputs do
 			input :category, label: "Danh mục"
 			input :title, label: "Tiêu đề"
+			f.input :slug
 			input :gia, label: "Giá"
 			input :tongquan, label: "Tổng quan sản phẩm",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :tieuchuan, label: "Tiêu chuẩn",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
